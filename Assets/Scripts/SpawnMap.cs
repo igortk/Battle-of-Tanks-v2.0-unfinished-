@@ -13,11 +13,11 @@ public class SpawnMap : MonoBehaviour
     private void Awake()
     {
         GenerateMap();
+        SpawnBase();
     }
 
     private void GenerateMap()
     {
-
         for (int x = 0; x < _weight; x++)
         {
             for (int y = 0; y < _hight; y++)
@@ -47,11 +47,13 @@ public class SpawnMap : MonoBehaviour
         {
             //Enemy Base
             GameObject _base = (GameObject)Resources.Load("Prefabs/Base");
-            Instantiate(_base, new Vector3Int(20, 38, 0), Quaternion.identity);
+            Instantiate(_base, new Vector3Int(20, 38, 0), Quaternion.identity).
+                GetComponent<Base>().SetTankBase(new TankBase(true));
 
             //Player Base
-            /*GameObject _base = (GameObject)Resources.Load("Prefabs/Base");
-            Instantiate(_base, new Vector3Int(20, 38, 0), Quaternion.identity);*/
+            _base = (GameObject)Resources.Load("Prefabs/Base");
+            Instantiate(_base, new Vector3Int(20, 2, 0), Quaternion.identity).
+                GetComponent<Base>().SetTankBase(new TankBase(false));
         }
     }
 }

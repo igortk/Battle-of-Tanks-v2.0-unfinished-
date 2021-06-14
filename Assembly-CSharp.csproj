@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\SpawnMap.cs" />
     <Compile Include="Assets\Scripts\Base.cs" />
+    <Compile Include="Assets\Classes\TankBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
