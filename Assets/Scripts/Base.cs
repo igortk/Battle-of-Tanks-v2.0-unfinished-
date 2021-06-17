@@ -5,6 +5,7 @@ using UnityEngine;
 public class Base : MonoBehaviour
 {
     [SerializeField] private TankBase _tankBase;
+
     void Start()
     {
         if (_tankBase.GetIsEnemyBase())
@@ -15,12 +16,17 @@ public class Base : MonoBehaviour
         else
         {
             gameObject.GetComponentInChildren<SpriteRenderer>().sprite =
-                Resources.Load<Sprite>("Sprites/Player Base");
+                           Resources.Load<Sprite>("Sprites/Player Base");
         }
     }
 
     public void SetTankBase(TankBase tankBase)
     {
         _tankBase = tankBase;
+    }
+
+    private void GenerateTankOnMap()
+    {
+
     }
 }

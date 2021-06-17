@@ -48,12 +48,12 @@ public class SpawnMap : MonoBehaviour
             //Enemy Base
             GameObject _base = (GameObject)Resources.Load("Prefabs/Base");
             Instantiate(_base, new Vector3Int(20, 38, 0), Quaternion.identity).
-                GetComponent<Base>().SetTankBase(new TankBase(true));
+                GetComponent<Base>().SetTankBase(new TankBase(true,30));
 
             //Player Base
             _base = (GameObject)Resources.Load("Prefabs/Base");
             Instantiate(_base, new Vector3Int(20, 2, 0), Quaternion.identity).
-                GetComponent<Base>().SetTankBase(new TankBase(false));
+                GetComponent<Base>().SetTankBase(new TankBase(false,30));
         }
     }
 }
